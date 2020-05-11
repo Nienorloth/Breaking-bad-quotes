@@ -3,13 +3,13 @@ import styled from '@emotion/styled';
 
 
 const ContenedorFrase = styled.div`
-    padding: 3rem;
+    padding: 2rem;
     border-radius: .5rem;
     background-color: #fff;
     max-width: 800px;
 
-    @media (min-width: 992px) {
-    margin-top: 13rem;
+    @media (min-width: 990px) {
+    margin-top: 14rem;
     }
 
     h1 {
@@ -39,6 +39,9 @@ const ContenedorFrase = styled.div`
 `
 
 const Frase = ({frase}) => {
+
+    if(Object.keys(frase).length === 0) return null;
+
     return ( 
 
       <ContenedorFrase>

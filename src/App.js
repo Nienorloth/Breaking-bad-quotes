@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Frase from './components/Frase';
 
@@ -14,7 +14,7 @@ background: -webkit-linear-gradient(top left, #007d35 0%, #007d35 40%, #0f574e 1
 background-size: 300px;
 font-family: Arial, Helvetica, sans-serif;
 color: #fff;
-margin-top: 3rem;
+margin-top: 1rem;
 padding: 1rem 3rem;
 font-size: 2rem;
 border: 2px solid black;
@@ -30,6 +30,12 @@ function App() {
     const frase = await api.json();
     guardarFrase(frase[0]);
   }
+
+  //cargar una frase
+
+  useEffect(() => {
+    consultarAPI()
+  }, []);
 
   return (
    <Contenedor> 
